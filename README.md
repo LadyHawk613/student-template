@@ -1,1 +1,1 @@
-# student-template-2
+# student-template

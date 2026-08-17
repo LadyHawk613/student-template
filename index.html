@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Math Dashboard</title>
+    <!-- Import a hand-drawn chalk style font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* General page setup with chalkboard background */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: url('chalkboard.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            margin: 0;
+            padding: 40px;
+            box-sizing: border-box;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        /* Dashboard layout wrapper holding sidebar and main content side-by-side */
+        .dashboard-layout {
+            display: flex;
+            align-items: stretch; /* Forces both columns to match heights */
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Sidebar container pinned to the far left */
+        .sidebar {
+            width: 260px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Main content area containing the iframe */
+        .main-content {
+            flex-grow: 1;
+            background-color: transparent;
+            border-radius: 12px;
+            box-shadow: none;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Iframe styling to fill the entire main content panel */
+        .main-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+            flex-grow: 1;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 22px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-family: 'Cabin Sketch', cursive, sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        /* Menu item list styling - Single vertical column */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        li {
+            margin: 0; 
+        }
+
+        /* Styling links to look like clean buttons with a chalk font */
+        a {
+            display: block;
+            padding: 12px 18px;
+            background-color: #0081A7;
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Cabin Sketch', cursive, sans-serif;
+            font-weight: 700;
+            font-size: 19px;
+            letter-spacing: 0.5px;
+            border-radius: 6px;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        /* Interactive hover effects */
+        a:hover {
+            background-color: #00afb9;
+        }
+        
+        a:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <!-- Left Sidebar Navigation with target references -->
+        <div class="sidebar">
+            <h1>Select a Math Section</h1>
+            <ul>
+                <li><a href="algebra/algebra-hub.html" target="content-frame">Algebra</a></li>
+                <li><a href="geometry/geometry-hub.html" target="content-frame">Geometry</a></li>
+                <li><a href="trigonometry/trigonometry-hub.html" target="content-frame">Trigonometry</a></li>
+                
+                <li><a href="math1/math1-hub.html" target="content-frame">Integrated Math 1</a></li>
+                <li><a href="math2/math2-hub.html" target="content-frame">Integrated Math 2</a></li>
+                <li><a href="math3/math3-hub.html" target="content-frame">Integrated Math 3</a></li>
+                
+                <li><a href="precalc/precalc-hub.html" target="content-frame">Pre-Calculus</a></li>
+                <li><a href="calculus/calculus-hub.html" target="content-frame">Calculus</a></li>
+                
+                <li><a href="4th/4th-hub.html" target="content-frame">4th Grade Math</a></li>
+            </ul>
+        </div>
+
+        <!-- Center Display Area (Iframe) -->
+        <div class="main-content">
+            <iframe src="welcome.html" name="content-frame" title="Math Content Area"></iframe>
+        </div>
+    </div>
+</body>
+</html>
